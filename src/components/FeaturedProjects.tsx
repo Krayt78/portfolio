@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Code2, ExternalLink, Github, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Code2, ExternalLink, Github, ChevronLeft, ChevronRight } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 
 interface Project {
@@ -66,19 +65,10 @@ export function FeaturedProjects() {
   return (
     <section className="py-20 bg-white dark:bg-gray-900" id="projects">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between mb-12">
-          <h2 className="text-3xl font-bold flex items-center gap-2 text-gray-900 dark:text-white">
-            <Code2 className="text-indigo-600 dark:text-indigo-400" />
-            Featured Projects
-          </h2>
-          <Link 
-            to="/projects"
-            className="flex items-center gap-2 text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 transition-colors group"
-          >
-            View All Projects
-            <ArrowRight className="group-hover:translate-x-1 transition-transform" />
-          </Link>
-        </div>
+        <h2 className="text-3xl font-bold text-center mb-12 flex items-center justify-center gap-2 text-gray-900 dark:text-white">
+          <Code2 className="text-indigo-600 dark:text-indigo-400" />
+          Featured Projects
+        </h2>
         
         {loading && (
           <div className="text-center text-gray-600 dark:text-gray-400">Loading projects...</div>
@@ -202,16 +192,6 @@ export function FeaturedProjects() {
             )}
           </div>
         )}
-
-        <div className="mt-12 text-center">
-          <Link
-            to="/projects"
-            className="inline-flex items-center gap-2 text-lg font-medium text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 transition-colors group"
-          >
-            Explore All Projects
-            <ArrowRight className="group-hover:translate-x-1 transition-transform" />
-          </Link>
-        </div>
       </div>
     </section>
   );
